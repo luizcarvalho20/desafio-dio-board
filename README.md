@@ -3,6 +3,12 @@
 Projeto desenvolvido como parte do **Desafio Backend Java** da **DIO (Digital Innovation One)**.  
 O objetivo é criar um sistema de **gerenciamento de tarefas baseado em boards**, com foco em **boas práticas de orientação a objetos, organização em camadas e testes automatizados**.
 
+--- 
+
+![Java](https://img.shields.io/badge/Java-17-blue)
+![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
+![JUnit](https://img.shields.io/badge/tests-JUnit5-orange)
+
 ---
 
 ## 🎯 Objetivo do Projeto
