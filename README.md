@@ -1,152 +1,101 @@
+# 📋 Desafio Board – Gerenciamento de Tarefas
 
- 📋 Desafio Board — Java + JDBC + MySQL
-
-Projeto desenvolvido como parte do **Desafio prático da DIO**, com o objetivo de aplicar conceitos de **Java**, **Programação Orientada a Objetos**, **JDBC**, **MySQL** e **arquitetura em camadas**, criando uma aplicação de **quadro de tarefas (Board)** executada via **console**.
+Projeto desenvolvido como parte do **Desafio Backend Java** da **DIO (Digital Innovation One)**.  
+O objetivo é criar um sistema de **gerenciamento de tarefas baseado em boards**, com foco em **boas práticas de orientação a objetos, organização em camadas e testes automatizados**.
 
 ---
-## 🚧 Escopo da Implementação
 
-Este projeto foca na modelagem do domínio, serviços principais e testes automatizados.
-Funcionalidades como menu interativo (CLI), persistência em banco de dados e relatórios
-estão planejadas para evolução futura do projeto.
----
 ## 🎯 Objetivo do Projeto
 
-Criar uma aplicação de console que permita:
+Implementar a base de um sistema de boards customizáveis para acompanhamento de tarefas, permitindo a criação, organização e evolução de cards dentro de colunas bem definidas.
 
-- Criar e gerenciar **boards**
-- Criar **colunas** associadas a um board
-- Criar, mover e listar **cards**
-- Persistir os dados em banco de dados **MySQL**
-- Gerar relatórios simples a partir dos dados cadastrados
-
-O projeto segue boas práticas de organização, separando responsabilidades entre **UI**, **Service**, **DAO** e **Domain**.
+Este projeto foca principalmente em:
+- Modelagem correta do domínio
+- Regras de negócio centrais
+- Serviços da aplicação
+- Testes automatizados com JUnit
 
 ---
 
-## 🧠 Conceitos Aplicados
+## 🧩 Funcionalidades Implementadas
 
-- Programação Orientada a Objetos (POO)
-- Arquitetura em camadas
-- JDBC (Java Database Connectivity)
-- MySQL
-- Maven
-- Organização de pacotes
-- Enumerações
-- Relacionamentos entre entidades
-- Boas práticas de código
+### ✔️ Estrutura de Domínio
+- Board
+- Column
+- Card
+- Enum `ColumnType` (INITIAL, PENDING, FINAL, CANCEL)
 
----
+### ✔️ Regras de Negócio Iniciais
+- Tipos de colunas bem definidos
+- Organização do domínio seguindo boas práticas
+- Separação entre camadas (domain, dao, service)
 
-## 🛠️ Tecnologias Utilizadas
-
-- **Java 17+**
-- **Maven**
-- **MySQL 8+**
-- **JDBC**
-- **IntelliJ IDEA**
-- **Git/GitHub**
+### ✔️ Testes Automatizados
+- Testes unitários com **JUnit 5**
+- Testes cobrindo:
+  - Entidades do domínio
+  - Enumerações
+  - Serviços principais
+- Build validado com sucesso via `mvn test`
 
 ---
 
-## 📂 Estrutura do Projeto
+## 🧪 Testes
 
-```text
-desafio-board
-├── doc
-│   └── mysql-setup.md
-├── src
-│   └── main
-│       ├── java
-│       │   └── br.com.dio.board
-│       │       ├── dao
-│       │       ├── domain
-│       │       ├── service
-│       │       ├── ui
-│       │       └── Main.java
-│       ├── db
-│       │   ├── ConnectionFactory.java
-│       │   └── DbBootstrap.java
-│       └── resources
-│           └── schema.sql
-├── pom.xml
-└── README.md
-📌 Camadas
-ui → Interação com o usuário via terminal
+O projeto possui testes automatizados localizados em:
 
-service → Regras de negócio
+bash
+src/test/java
+Para executar os testes:
 
-dao → Acesso ao banco de dados
-
-domain → Entidades do sistema
-
-db → Configuração de conexão e inicialização do banco
-
-🗄️ Banco de Dados
-O banco de dados é criado automaticamente na primeira execução da aplicação, utilizando o arquivo:
-
-text
-Copiar código
-src/main/resources/schema.sql
-A inicialização é feita pela classe:
-
-text
-Copiar código
-DbBootstrap
-As instruções para configuração do MySQL estão documentadas em:
-
-text
-Copiar código
-doc/mysql-setup.md
-▶️ Como Executar o Projeto
-🔹 Pré-requisitos
-Java 17 ou superior
-
-Maven instalado
-
-MySQL rodando localmente
-
-🔹 Passo 1 — Clonar o repositório
 bash
 Copiar código
-git clone https://github.com/seu-usuario/desafio-board.git
-cd desafio-board
-🔹 Passo 2 — Configurar o banco de dados
-Siga as instruções do arquivo:
+mvn test
+Resultado esperado:
 
-text
-Copiar código
-doc/mysql-setup.md
-Verifique as credenciais configuradas em ConnectionFactory.
+Build: SUCCESS
 
-🔹 Passo 3 — Executar a aplicação
-bash
-Copiar código
-mvn exec:java
-🖥️ Execução da Aplicação
-A aplicação é executada via terminal, apresentando um menu interativo que permite:
+Todos os testes executados sem falhas
 
-Criar boards
+🚧 Escopo da Implementação
+Este projeto foi desenvolvido com escopo incremental, priorizando a qualidade do código, domínio bem estruturado e testes automatizados.
 
-Criar colunas
+Funcionalidades abaixo não fazem parte desta etapa, mas estão previstas para evolução futura do projeto:
 
-Criar e mover cards
+Menu interativo via CLI
 
-Listar informações
+Persistência em banco de dados MySQL
 
-Gerar relatórios
+Relatórios de tempo de execução dos cards
 
-📈 Melhorias Futuras
-Implementação de testes automatizados
+Histórico de bloqueios e desbloqueios
 
-Tratamento global de exceções
+Navegação completa de cards entre colunas via interface
 
-Interface gráfica ou API REST
+🛠️ Tecnologias Utilizadas
+Java 17
 
-Autenticação de usuários
+Maven
 
-Exportação de relatórios
+JUnit 5
+
+Mockito (preparado para testes futuros)
+
+IntelliJ IDEA
+
+📌 Observações Finais
+Este projeto demonstra a aplicação prática de:
+
+Orientação a Objetos
+
+Organização em camadas
+
+Escrita de testes automatizados
+
+Build e validação com Maven
+
+O código foi estruturado visando manutenibilidade, legibilidade e evolução futura.
 
 👨‍💻 Autor
 Projeto desenvolvido por Luiz Carvalho
-Desafio prático — Digital Innovation One (DIO)
+Desafio educacional — Digital Innovation One (DIO)
