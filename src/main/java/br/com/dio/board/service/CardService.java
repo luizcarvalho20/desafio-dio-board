@@ -2,7 +2,7 @@ package br.com.dio.board.service;
 
 import br.com.dio.board.dao.CardDao;
 import br.com.dio.board.dao.ColumnDao;
-import br.com.dio.board.db.ConnectionFactory;
+import br.db.ConnectionFactory;
 import br.com.dio.board.domain.BoardColumn;
 import br.com.dio.board.domain.Card;
 import br.com.dio.board.domain.ColumnType;

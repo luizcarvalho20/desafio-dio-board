@@ -1,4 +1,4 @@
-package br.com.dio.board.db;
+package br.db;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

@@ -1,4 +1,4 @@
-package br.com.dio.board.db;
+package br.db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -1,6 +1,6 @@
 package br.com.dio.board.dao;
 
-import br.com.dio.board.db.ConnectionFactory;
+import br.db.ConnectionFactory;
 import br.com.dio.board.domain.BoardColumn;
 import br.com.dio.board.domain.ColumnType;
 

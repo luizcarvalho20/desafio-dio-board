@@ -1,6 +1,6 @@
 package br.com.dio.board.dao;
 
-import br.com.dio.board.db.ConnectionFactory;
+import br.db.ConnectionFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
