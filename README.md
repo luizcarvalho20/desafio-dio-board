@@ -1,107 +1,57 @@
-# 📋 Desafio Board – Gerenciamento de Tarefas
+# 📋 Kanban Board API - Core Domain & QA
 
-Projeto desenvolvido como parte do **Desafio Backend Java** da **DIO (Digital Innovation One)**.  
-O objetivo é criar um sistema de **gerenciamento de tarefas baseado em boards**, com foco em **boas práticas de orientação a objetos, organização em camadas e testes automatizados**.
-
---- 
-
-![Java](https://img.shields.io/badge/Java-17-blue)
-![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
-![JUnit](https://img.shields.io/badge/tests-JUnit5-orange)
+Este repositório contém a implementação do núcleo de uma API de gerenciamento de boards, desenvolvida com **Java 17** e **Spring Boot**. O foco principal deste projeto é demonstrar o domínio técnico em modelagem de software, separação de responsabilidades (Layered Architecture) e a garantia de qualidade através de **testes automatizados**.
 
 ---
 
-## 🎯 Objetivo do Projeto
+## 🎯 Diferenciais Técnicos
 
-Implementar a base de um sistema de boards customizáveis para acompanhamento de tarefas, permitindo a criação, organização e evolução de cards dentro de colunas bem definidas.
-
-Este projeto foca principalmente em:
-- Modelagem correta do domínio
-- Regras de negócio centrais
-- Serviços da aplicação
-- Testes automatizados com JUnit
+Diferente de uma implementação básica, este projeto foi construído focando em:
+- **Clean Code & Domain Driven:** Entidades (`Board`, `Column`, `Card`) isoladas com regras de negócio auto-contidas.
+- **Resiliência:** Garantia de que o fluxo de estados (INITIAL -> PENDING -> FINAL) respeita o domínio.
+- **Test-First Mindset:** Suíte de testes unitários que valida desde enums até a orquestração de serviços.
 
 ---
 
-## 🧩 Funcionalidades Implementadas
+## 🧪 Estratégia de Qualidade (QA)
 
-### ✔️ Estrutura de Domínio
-- Board
-- Column
-- Card
-- Enum `ColumnType` (INITIAL, PENDING, FINAL, CANCEL)
+A suíte de testes integrada ao ciclo de build garante que nenhuma alteração quebre as regras fundamentais.
 
-### ✔️ Regras de Negócio Iniciais
-- Tipos de colunas bem definidos
-- Organização do domínio seguindo boas práticas
-- Separação entre camadas (domain, dao, service)
+- **Tecnologias:** JUnit 5, Mockito e Maven Surefire Plugin.
+- **Execução:**
+  ```bash
+  mvn clean test
+Nota de QA: Durante o desenvolvimento, os testes automatizados foram cruciais para identificar desalinhamentos na lógica de transição de colunas, permitindo correções antes do deploy.
 
-### ✔️ Testes Automatizados
-- Testes unitários com **JUnit 5**
-- Testes cobrindo:
-  - Entidades do domínio
-  - Enumerações
-  - Serviços principais
-- Build validado com sucesso via `mvn test`
+🐳 Containerização (Docker)
+O projeto está totalmente "dockerizado", facilitando o deploy e a consistência entre ambientes de desenvolvimento e produção.
 
----
+Build da imagem:
 
-## 🧪 Testes
+Bash
 
-O projeto possui testes automatizados localizados em:
+docker build -t kanban-board-api .
+Execução do container:
 
-bash
-src/test/java
-Para executar os testes:
+Bash
 
-bash
-Copiar código
-mvn test
-Resultado esperado:
+docker run -p 8080:8080 kanban-board-api
+🛠️ Stack Tecnológica
+Linguagem: Java 17
 
-Build: SUCCESS
+Build Tool: Maven
 
-Todos os testes executados sem falhas
+Core: Spring Boot
 
-🚧 Escopo da Implementação
-Este projeto foi desenvolvido com escopo incremental, priorizando a qualidade do código, domínio bem estruturado e testes automatizados.
+Testing: JUnit 5 & Mockito
 
-Funcionalidades abaixo não fazem parte desta etapa, mas estão previstas para evolução futura do projeto:
+Infra: Docker
 
-Menu interativo via CLI
+🚀 Roadmap de Evolução
+[ ] Persistência com MySQL/PostgreSQL.
 
-Persistência em banco de dados MySQL
+[ ] Implementação de logs de auditoria (Histórico de cards).
 
-Relatórios de tempo de execução dos cards
+[ ] Interface CLI para interação em tempo real.
 
-Histórico de bloqueios e desbloqueios
-
-Navegação completa de cards entre colunas via interface
-
-🛠️ Tecnologias Utilizadas
-Java 17
-
-Maven
-
-JUnit 5
-
-Mockito (preparado para testes futuros)
-
-IntelliJ IDEA
-
-📌 Observações Finais
-Este projeto demonstra a aplicação prática de:
-
-Orientação a Objetos
-
-Organização em camadas
-
-Escrita de testes automatizados
-
-Build e validação com Maven
-
-O código foi estruturado visando manutenibilidade, legibilidade e evolução futura.
-
-👨‍💻 Autor
-Projeto desenvolvido por Luiz Carvalho
-Desafio educacional — Digital Innovation One (DIO)
+Desenvolvido por Luiz Carvalho.
